@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cao Xinan</title>
+<meta name="description" content="Cao Xinan — paintings of friends, music and the street, 2017 to now.">
+<meta name="theme-color" content="#0b0a09">
+<link rel="canonical" href="https://caoxinan.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cao Xinan">
+<meta property="og:description" content="Cao Xinan — paintings of friends, music and the street, 2017 to now.">
+<meta property="og:url" content="https://caoxinan.com/">
+<meta property="og:image" content="https://caoxinan.com/assets/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/HeadingNow-48Heavy-subset.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800;900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="mark" href="#top">Cao Xinan</a>
+  <nav class="mono" aria-label="Main">
+    <a href="#work">Work</a><a href="#about">About</a><a href="#exhibitions">Exhibitions</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <h1>Cao<span class="l2">Xinan</span></h1>
+    <div class="hero-meta">
+      <p>Loud colour, faces pulled out of shape, words painted straight onto the canvas. Paintings of friends, music and the street, made between 2017 and now.</p>
+      <dl class="mono">
+        <div><dt>Works</dt><dd id="statWorks">10</dd></div>
+        <div><dt>Since</dt><dd>2017</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="rail" id="work">
+    <div class="filters" role="group" aria-label="Filter paintings" id="filters"></div>
+    <span class="hint mono">Click a painting to view full size · ← → to browse</span>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <section class="block" id="about">
+    <h2>About<em>.</em></h2>
+    <div class="copy">
+      <p>Cao Xinan is a teenage painter who works big and fast, mostly in paint on stretched canvas. The earliest piece here is dated 2017; the newest was finished in April 2026.</p>
+      <p>The subjects come from everyday life: classmates mid-laugh, a friend with a lollipop, a bowl of noodles next to a laptop, a red bus with a banana on it. Faces get stretched, teeth get exaggerated, and words like ART, MUSIC and REST IN PEACE are painted right into the picture.</p>
+      <p class="note">Every painting is signed and dated by hand in the corner, day / month / year.</p>
+      <div class="facts mono">
+        <div>Medium<b>Paint on canvas</b></div>
+        <div>Themes<b>Friends, music, street</b></div>
+        <div>Status<b>Original works</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="exhibitions">
+    <h2>Exhi&shy;bitions<em>.</em></h2>
+    <div class="copy">
+      <p class="note">Shows, showcases and awards, newest first. <span class="sample mono">Sample</span> rows are placeholders to replace with real listings.</p>
+      <ol class="shows">
+        <li>
+          <span class="yr">2026</span>
+          <div class="sh"><b>Deep End: New Paintings</b><span>First solo presentation · Venue to confirm</span></div>
+          <span class="tag mono">Solo<i class="sample">Sample</i></span>
+        </li>
+        <li>
+          <span class="yr">2025</span>
+          <div class="sh"><b>Young Artists Showcase</b><span>Group exhibition · Venue to confirm</span></div>
+          <span class="tag mono">Group<i class="sample">Sample</i></span>
+        </li>
+        <li>
+          <span class="yr">2024</span>
+          <div class="sh"><b>School Art Exhibition</b><span>Selected work: Head Rush</span></div>
+          <span class="tag mono">Showcase<i class="sample">Sample</i></span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <h2>Say<br>hello<em>.</em></h2>
+    <div class="copy">
+      <p>For exhibitions, school showcases or questions about a painting, write in. Messages are read and answered by a parent.</p>
+      <div class="mail">
+        <code id="email">hello@caoxinan.com</code>
+        <button type="button" id="copyBtn">Copy</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mono">
+  <span>© 2026 Cao Xinan. All paintings shown are original works.</span>
+  <span>Font: Heading Now Family by Zetafonts · <a href="http://www.zetafonts.com/collection/6237" target="_blank" rel="noopener">zetafonts.com/collection/6237</a></span>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Painting viewer" aria-hidden="true">
+  <div class="lb-top">
+    <span class="lb-count mono" id="lbCount"></span>
+    <button class="icon" id="lbClose" aria-label="Close viewer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="lb-stage" id="lbStage">
+    <img id="lbImg" alt="">
+    <button class="icon lb-prev" id="lbPrev" aria-label="Previous painting"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="icon lb-next" id="lbNext" aria-label="Next painting"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+  <div class="lb-cap">
+    <h3 id="lbTitle"></h3>
+    <span class="meta mono" id="lbMeta"></span>
+  </div>
+  <div class="lb-thumbs" id="lbThumbs"></div>
+</div>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
