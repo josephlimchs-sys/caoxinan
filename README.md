@@ -5,18 +5,19 @@ Static portfolio site for painter Cao Xinan. Plain HTML, CSS and JavaScript with
 ## Structure
 
 ```
-index.html          Home: hero, filterable gallery, About, Exhibitions, Contact
+index.html          Home: hero, selected work, About, Themes, Exhibitions
 404.html            Not-found page
 robots.txt          Search engine rules
 sitemap.xml         Sitemap for caoxinan.com
 assets/
   css/style.css     All styles. Design tokens are in the :root block at the top
-  js/main.js        Painting data, filters, lightbox, copy-email button
-  img/              Full-size paintings (used in the lightbox)
-  img/thumbs/       900px versions (used in the grid and thumbnail strip)
+  js/main.js        Painting data, filters, theme accordion, lightbox
+  img/              Full-size paintings (used in the lightbox and hero)
+  img/thumbs/       900px versions (used in the grid and thumbnails)
   img/og-cover.jpg  Social share image
   img/favicon.svg   Browser tab icon
-  fonts/            Heading Now subsets (letters and punctuation only)
+  fonts/            Cinzel SemiBold (header, headings, artwork titles)
+                    Louis George Cafe (body text and labels)
 ```
 
 ## Deploy
@@ -35,7 +36,7 @@ To preview locally, run `python3 -m http.server` inside this folder and open htt
 - `k`: the image key in `IMG`
 - `t`: the title
 - `d`: the date shown in the lightbox
-- `y`: the year shown on the card
+- `y`: the year (not currently shown on the site)
 - `c`: the category (Portraits, Scenes or Mark-making)
 - `a`: the alt text describing the painting
 
@@ -45,12 +46,18 @@ To add a painting:
 2. Add an entry to `IMG` with its width and height.
 3. Add the painting to `WORKS`. Newest first is the current order.
 
-**Exhibitions.** Edit the `<ol class="shows">` list in `index.html`. Remove the `<i class="sample">Sample</i>` tag once a row is real.
+**Theme descriptions.** Edit the `ABOUT` object in `assets/js/main.js`.
 
-**Contact email.** The address `hello@caoxinan.com` is a placeholder, set in `index.html` (`id="email"`).
+**Exhibitions.** Edit the `<ol>` list in the `#exhibitions` section of `index.html`. Each `<li>` has the year, the show name and the details. Add new shows at the top.
+
+## Fonts
+
+Both fonts are licensed for commercial web use, so the site can go live as is:
+
+- Cinzel is open source (SIL Open Font License).
+- Louis George Cafe (by Yining Chen) is free for personal and commercial use.
 
 ## Before going live
 
-1. **Buy the font licence.** Heading Now is included as Zetafonts trial files under CC BY-NC: non-commercial use only, with a required credit. The trial digits are watermarked, so numerals currently fall back to Big Shoulders Display. Buy the webfont licence at http://www.zetafonts.com/collection/6237 and replace the two files in `assets/fonts/`. Once the licensed files have real digits, remove the `unicode-range` lines in `style.css`. Keep or remove the footer credit as the licence requires.
-2. **Replace the placeholders.** Swap in the real painting titles, the dates for the three undated works, the exhibition rows and the contact email.
-3. **Re-shoot the paintings if possible.** Straight-on photos in even light will look sharper than crops from wall photos.
+1. **Check the painting details.** Confirm the titles, and add dates for the three undated works (Got Banana, Rest in Peace, Red Church).
+2. **Re-shoot the paintings if possible.** Straight-on photos in even light will look sharper than crops from wall photos.
